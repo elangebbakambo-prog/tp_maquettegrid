@@ -1,127 +1,131 @@
-/* Importation des polices depuis Google Fonts */
+/* ----------------------------- */
+/* Importation des polices       */
+/* ----------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
 
-/* Réinitialisation générale et réglage des polices */
-*{
-    font-family: "Inter", sans-serif;  /* Police par défaut pour tout le site */
-    margin: 0;                          /* Supprime les marges par défaut */
-    padding: 5px;                       /* Ajoute un petit padding global */
-    box-sizing: border-box;             /* Inclut padding et bordures dans les dimensions */
+/* ----------------------------- */
+/* Paramètres globaux            */
+/* ----------------------------- */
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
-/* Styles pour les listes */
-li{
-    list-style: none;                   /* Supprime les puces par défaut */
+li { list-style: none; }
+p  { font-size: 0.8rem; }
+
+body {
+    min-height: 100vh;
+    background-color: #1D1D1D;
+    color: #FAFAFA;
 }
 
-/* Style pour les paragraphes */
-p{
-    font-size: 0.8rem;                  /* Taille du texte légèrement réduite */
+/* ----------------------------- */
+/* NAVIGATION                    */
+/* ----------------------------- */
+nav {
+    display: grid;
+    grid-template-columns: 50% 50%; /* titre / menu */
+    padding: 10px 20px;
 }
 
-/* Styles pour le corps de la page */
-body{
-    min-height: 100vh;                  /* Minimum hauteur = hauteur de la fenêtre */
-    background-color: #1D1D1D;          /* Fond sombre */
-    color: rgb(250, 250, 250);          /* Texte blanc */
-}
-
-/* Styles pour la barre de navigation */
-nav { 
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 10px 20px;                   
-}
-
-/* Styles pour le menu (liste) */
 nav ul {
-display: grid;
-grid-template-columns: 33% 33% 33%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items du menu */
 }
 
-/* Styles pour le header principal */
+/* ----------------------------- */
+/* HEADER                        */
+/* ----------------------------- */
 header {
-display: grid;
-grid-template-columns: 50% 50%;
-  margin: 30px auto;                    /* Marge verticale */
+    display: grid;
+    grid-template-columns: 50% 50%; /* texte / image */
+    margin: 30px auto;
 }
-h1{
-  font-size: 5rem;                      /* Très grand titre */
-  color: #FCFCFC;                       /* Texte blanc */
+
+h1 {
+    font-size: 5rem;
+    color: #FCFCFC;
 }
+
 .header-left-container h3 {
-  font-size: 1.8em;                     /* Taille légèrement plus petite que h1 */
-  color: #3532AB;                       /* Couleur bleue */
+    font-size: 1.8em;
+    color: #3532AB;
 }
+
 .header-right {
-  width: 50%;                            /* Prend l’autre moitié du header */
+    width: 100%;
 }
 
-/* Image principale dans le header */
-#modem{
-  width: 100%;    
- margin: 0 auto;
- 
-  
+#modem {
+    width: 100%;
+    margin: 0 auto;
 }
 
+/* ----------------------------- */
+/* SECTION INFOS                 */
+/* ----------------------------- */
 .infos {
- display: grid;
- grid-template-columns: 33% 67%;
-  border-radius: 10px;                   /* Coins arrondis du conteneur */
-  background-color: black;               /* Fond noir */
+    display: grid;
+    grid-template-columns: 33% 67%; /* gauche texte/boutons, droite images */
+    background-color: black;
+    border-radius: 10px;
 }
 
-/* Bloc gauche de la section infos */
+/* ----------------------------- */
+/* Bloc gauche (texte + boutons) */
+/* ----------------------------- */
 .infos-left {
-  width: 33%;                             
-  color: #FCFCFC;                       
+    color: #FCFCFC;
 }
 
-/* Titre du bloc gauche */
 .infos-left h4 {
-  margin: 0;                             /* Supprime les marges par défaut */
-  font-size: 2.4em;                      /* Taille du titre */
+    font-size: 2.4em;
+    margin: 0;
 }
 
-/* Conteneur des boutons */
+/* Conteneur boutons - correction pour empiler en colonne */
 .btn-container {
-
+    display: grid;       /* active Grid pour les boutons */
+    row-gap: 10px;       /* espace vertical entre chaque bouton */
 }
 
-/* Styles pour les boutons */
+/* Styles boutons */
 button {
-  background-color: #3532AB;             /* Fond bleu */
-  color: white;                          /* Texte blanc */
-  border: none;                           /* Pas de bordure */
-  width: 150px;                           /* Largeur fixe */
-  padding: 10px 0;                        /* Hauteur et padding vertical */
-  border-radius: 10px;                    /* Coins arrondis */
-  font-weight: bold;                      /* Texte en gras */
-  letter-spacing: 1px;                    /* Espacement des lettres */
-  margin: 5px;                            /* Petit espace autour */
+    background-color: #3532AB;
+    color: white;
+    border: none;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 5px 0;       /* petit espace autour */
 }
 
-/* Bloc droit de la section infos */
+/* ----------------------------- */
+/* Bloc droit (investisseurs)    */
+/* ----------------------------- */
 .infos-right {
-  width: 67%;                             /* Prend les 2/3 de la section */
+    width: 100%;
 }
 
-/* Conteneur des investisseurs */
-.investors{
+/* Conteneur général des images */
+.investors {
     display: grid;
     align-items: center;
     height: 80%;
 }
 
-/* Conteneur des images individuelles */
-.img-container{
-  display: grid;             
-  grid-template-columns: 33% 33% 33%;             
-                            
+/* Grille logos */
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 logos en ligne */
 }
 
-/* Styles pour chaque image */
-.img-container img{
-  height: 60px;                            /* Hauteur fixe pour toutes les images */
+/* Logos */
+.img-container img {
+    height: 60px;
 }
