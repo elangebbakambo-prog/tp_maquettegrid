@@ -1,82 +1,88 @@
-/* ----------------------------- */
-/* Importation des polices       */
-/* ----------------------------- */
+/* --------------------------------------------- */
+/* Importation des polices                       */
+/* --------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
 
-/* ----------------------------- */
-/* Paramètres globaux            */
-/* ----------------------------- */
+
+/* --------------------------------------------- */
+/* Paramètres globaux                            */
+/* --------------------------------------------- */
 * {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;           /* Police générale */
     margin: 0;
     padding: 5px;
-    box-sizing: border-box;
+    box-sizing: border-box;                    /* Meilleure gestion des tailles */
 }
 
-li { list-style: none; }
-p  { font-size: 0.8rem; }
+li { list-style: none; }                       /* Retire les puces des listes */
+p  { font-size: 0.8rem; }                      /* Texte paragraphe plus petit */
 
 body {
     min-height: 100vh;
-    background-color: #1D1D1D;
-    color: #FAFAFA;
+    background-color: #1D1D1D;                 /* Couleur de fond */
+    color: #FAFAFA;                             /* Texte clair */
 }
 
-/* ----------------------------- */
-/* NAVIGATION                    */
-/* ----------------------------- */
+
+/* --------------------------------------------- */
+/* NAVIGATION                                    */
+/* --------------------------------------------- */
 nav {
     display: grid;
-    grid-template-columns: 50% 50%; /* titre / menu */
+    grid-template-columns: 50% 50%;            /* Titre / Menu */
     padding: 10px 20px;
 }
 
 nav ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items du menu */
+    grid-template-columns: repeat(3, 1fr);     /* 3 éléments de menu */
 }
 
-/* ----------------------------- */
-/* HEADER                        */
-/* ----------------------------- */
+
+/* --------------------------------------------- */
+/* HEADER                                        */
+/* --------------------------------------------- */
 header {
     display: grid;
-    grid-template-columns: 50% 50%; /* texte / image */
+    grid-template-columns: 50% 50%;            /* Texte / Image */
+    align-items: center;                        /* Centrer verticalement */
     margin: 30px auto;
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 5rem;                            /* Gros titre */
     color: #FCFCFC;
 }
 
 .header-left-container h3 {
     font-size: 1.8em;
-    color: #3532AB;
+    color: #3532AB;                             /* Bleu accent */
 }
 
 .header-right {
-    width: 100%;
+    width: 100%;                                 /* Image prend largeur de sa colonne */
 }
 
 #modem {
-    width: 100%;
+    width: 100%;                                 /* Image responsive */
     margin: 0 auto;
 }
 
-/* ----------------------------- */
-/* SECTION INFOS                 */
-/* ----------------------------- */
+
+/* --------------------------------------------- */
+/* SECTION INFOS                                 */
+/* --------------------------------------------- */
 .infos {
     display: grid;
-    grid-template-columns: 33% 67%; /* gauche texte/boutons, droite images */
+    grid-template-columns: 33% 67%;             /* Texte / Images */
     background-color: black;
     border-radius: 10px;
 }
 
-/* ----------------------------- */
-/* Bloc gauche (texte + boutons) */
-/* ----------------------------- */
+
+/* --------------------------------------------- */
+/* Bloc gauche (texte + boutons)                 */
+/* --------------------------------------------- */
 .infos-left {
     color: #FCFCFC;
 }
@@ -86,13 +92,7 @@ h1 {
     margin: 0;
 }
 
-/* Conteneur boutons - correction pour empiler en colonne */
-.btn-container {
-    display: grid;       /* active Grid pour les boutons */
-    row-gap: 10px;       /* espace vertical entre chaque bouton */
-}
-
-/* Styles boutons */
+/* Styles des boutons */
 button {
     background-color: #3532AB;
     color: white;
@@ -102,12 +102,14 @@ button {
     border-radius: 10px;
     font-weight: bold;
     letter-spacing: 1px;
-    margin: 5px 0;       /* petit espace autour */
+    margin: 5px 0;                               /* Espacement vertical */
+    display: block;                              /* Boutons un sous l'autre */
 }
 
-/* ----------------------------- */
-/* Bloc droit (investisseurs)    */
-/* ----------------------------- */
+
+/* --------------------------------------------- */
+/* Bloc droit (logos investisseurs)              */
+/* --------------------------------------------- */
 .infos-right {
     width: 100%;
 }
@@ -119,13 +121,64 @@ button {
     height: 80%;
 }
 
-/* Grille logos */
+/* Grille des logos */
 .img-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 logos en ligne */
+    grid-template-columns: repeat(3, 1fr);      /* 3 logos par ligne */
 }
 
-/* Logos */
+/* Taille des logos */
 .img-container img {
     height: 60px;
+}
+
+
+/* --------------------------------------------- */
+/* MEDIA QUERIES – TABLETTES (<800px)            */
+/* --------------------------------------------- */
+@media screen and (max-width: 800px) {
+
+    h1 {
+        font-size: 2.5rem;                      /* Titre plus petit */
+    }
+
+    .header-left-container {
+        font-size: 1rem;                        /* Réduction texte */
+    }
+
+    p {
+        font-size: 0.7rem;                      /* Paragraphes plus compacts */
+    }
+}
+
+
+/* --------------------------------------------- */
+/* MEDIA QUERIES – MOBILE (<592px)               */
+/* --------------------------------------------- */
+@media screen and (max-width: 592px) {
+
+    nav {
+        grid-template-columns: 35% 65%;         /* Nav plus compacte */
+    }
+
+    nav ul {
+        font-size: 0.7rem;                      /* Menu plus petit */
+    }
+
+    header {
+        display: block;                         /* 1 colonne : left puis right */
+    }
+
+    .infos {
+        display: block;                         /* Section infos en une colonne */
+        text-align: center;                     /* Alignement centré */
+    }
+
+    button {
+        margin: 5px auto;                       /* Boutons centrés */
+    }
+
+    .img-container img {
+        height: 40px;                           /* Logos plus petits */
+    }
 }
